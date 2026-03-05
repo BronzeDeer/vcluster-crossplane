@@ -1,0 +1,13 @@
+{
+  "jsonnet.languageServer.lint": true,
+  "jsonnet.languageServer.tankaMode": false,
+  "jsonnet.languageServer.evalBinary": "jsonnet",
+  "jsonnet.languageServer.enableAutoUpdate": true,
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/dcermak/vscode-rke-cluster-config/main/schemas/cluster.yml.json": "file:///home/joel/git-repos/vcluster-crossplane/hack/cluster.yaml"
+  },
+  "jsonnet.debugger.enableAutoUpdate": true,
+  "jsonnet.languageServer.jpath": [
+    "deps/jsonnet-libs/docsonnet"
+  ]
+}

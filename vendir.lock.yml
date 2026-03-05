@@ -1,0 +1,29 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - configDigest: ef5d89723fe4eb5085307faa71ffc86ff1ad84d0fff8410800e54ba2afee43ba
+    helmChart:
+      appVersion: v3.3.2
+      version: 9.4.7
+    path: chart
+  path: deps/argocd/vendor
+- contents:
+  - configDigest: 59241b2815351c73aa722162a51833acdc980822ca1d2568f12f8e16495f454b
+    helmChart:
+      appVersion: 2.2.0
+      version: 2.2.0
+    path: chart
+  path: deps/crossplane/vendor
+- contents:
+  - configDigest: 7c52e3e90684db89363e9b3efc1dc305e3f862ee4ea5e20b0aecf42c36f5ad53
+    git:
+      commitTitle: 'fix(render): manifest parameters on a single line (#58)...'
+      sha: 6ac6c69685b8c29c54515448eaca583da2d88150
+    path: docsonnet
+  - configDigest: a820980ea604c14addd41ed5da46fd28958e770149641000ddbc76586b5e98e2
+    git:
+      commitTitle: 'update: source github.com/jsonnet-libs/k8s@65c6a5e1'
+      sha: 317dc76a6e55a5dd5f4db7c418c004698fdeda41
+    path: argocd
+  path: deps/jsonnet-libs
+kind: LockConfig

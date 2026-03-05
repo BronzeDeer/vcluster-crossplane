@@ -55,7 +55,7 @@ local tla = app.spec.sources.directory.jsonnet.tlas;
         + tla.withValue("$ARGOCD_APP_PROJECT_NAME")
       ),
       (
-        tla.withName("repoURL")
+        tla.withName("sourceRepoURL")
         + tla.withValue("$ARGOCD_APP_SOURCE_REPO_URL")
       ),
       (

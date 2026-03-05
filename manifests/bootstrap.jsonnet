@@ -4,8 +4,8 @@ local app = argocdv1a1.application;
 
 local appUtil = import "./utils/apps.libsonnet";
 
-function(namespace=null,sourceRepoURL="https://github.com/BronzeDeer/vcluster-crossplane",projectName="default",sourcePathPrefix="",sourceTargetRevision="origin/HEAD",applicationNamespace="argocd",namePrefix="")
-local util = appUtil.fromTLA(namespace, namePrefix, sourceRepoURL, projectName, sourcePathPrefix, sourceTargetRevision, applicationNamespace);
+function(sourceRepoURL="https://github.com/BronzeDeer/vcluster-crossplane",projectName="default",sourcePathPrefix="",sourceTargetRevision="origin/HEAD",applicationNamespace="argocd",namePrefix="")
+local util = appUtil.fromTLA(namespace=applicationNamespace, namePrefix=namePrefix, sourceRepoURL=sourceRepoURL, projectName=projectName, sourcePathPrefix=sourcePathPrefix, sourceTargetRevision=sourceTargetRevision, applicationNamespace=applicationNamespace);
 [
   util.jsonnetApp("bootstrap", "manifests/")
   + app.spec.source.directory.withInclude("main.jsonnet")

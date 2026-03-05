@@ -80,12 +80,20 @@ local tla = app.spec.sources.directory.jsonnet.tlas;
   ,
   baseApp(args)::
     app.new(args.fullName)
+    + app.metadata.withFinalizersMixin("resources-finalizer.argocd.argoproj.io/foreground")
     + app.metadata.withNamespace(args.applicationNamespace)
     + app.spec.withProject("default")
     + app.spec.destination.withNamespace(args.namespace)
     + app.spec.destination.withServer("https://kubernetes.default.svc")
     + app.spec.source.withRepoURL(args.sourceRepoURL)
     + app.spec.source.withPath(args.sourceFullPath)
+    + app.spec.syncPolicy.automated.withEnabled(true)
+    + app.spec.syncPolicy.automated.withPrune(true)
+    + app.spec.syncPolicy.automated.withSelfHeal(true)
+    + app.spec.syncPolicy.withSyncOptions([
+      "CreateNamespace=true",
+      "PrunePropagationPolicy=foreground",
+    ])
   ,
 
   fromTLA(namespace,sourceRepoURL,projectName,sourcePathPrefix,sourceTargetRevision,applicationNamespace,namePrefix=""): {

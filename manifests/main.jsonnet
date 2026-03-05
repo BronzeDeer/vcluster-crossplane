@@ -4,8 +4,8 @@ local app = argocdv1a1.application;
 
 local appUtils = import "./utils/apps.libsonnet";
 
-function(namespace,sourceRepoURL,projectName,sourcePathPrefix,sourceTargetRevision,applicationNamespace)(
-  local util = appUtils.fromTLA(namespace, sourceRepoURL, projectName, sourcePathPrefix, sourceTargetRevision, applicationNamespace);
+function(namespace,sourceRepoURL,projectName,sourcePathPrefix,sourceTargetRevision,applicationNamespace,namePrefix="")(
+  local util = appUtils.fromTLA(namespace, sourceRepoURL, projectName, sourcePathPrefix, sourceTargetRevision, applicationNamespace,namePrefix="");
   [
     util.helmGitApp("argocd", "../deps/argocd/vendor/chart", "../../values.yaml")
     + app.spec.destination.withNamespace("argocd")

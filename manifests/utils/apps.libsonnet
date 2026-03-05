@@ -88,7 +88,7 @@ local tla = app.spec.sources.directory.jsonnet.tlas;
     + app.spec.source.withPath(args.sourceFullPath)
   ,
 
-  fromTLA(namespace,namePrefix="",sourceRepoURL,projectName,sourcePathPrefix,sourceTargetRevision,applicationNamespace): {
+  fromTLA(namespace,sourceRepoURL,projectName,sourcePathPrefix,sourceTargetRevision,applicationNamespace,namePrefix=""): {
     baseArgs(name): 
       $.appArgs.new(name, namespace, sourceRepoURL) 
       + {

@@ -93,6 +93,7 @@ local tla = app.spec.sources.directory.jsonnet.tlas;
     + app.spec.syncPolicy.withSyncOptions([
       "CreateNamespace=true",
       "PrunePropagationPolicy=foreground",
+      "ServerSideApply=true",
     ])
   ,
 

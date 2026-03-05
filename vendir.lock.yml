@@ -15,6 +15,13 @@ directories:
     path: chart
   path: deps/crossplane/vendor
 - contents:
+  - configDigest: 5d2c786f7d5a5c67337540fc377e02b8cd40ea0bfbc23a7204551f6847948c0b
+    helmChart:
+      appVersion: 0.32.1
+      version: 0.32.1
+    path: chart
+  path: deps/vcluster/vendor
+- contents:
   - configDigest: 7c52e3e90684db89363e9b3efc1dc305e3f862ee4ea5e20b0aecf42c36f5ad53
     git:
       commitTitle: 'fix(render): manifest parameters on a single line (#58)...'

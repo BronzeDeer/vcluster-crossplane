@@ -1,0 +1,7 @@
+global:
+  # -- Default domain used by all components
+  ## Used for ingresses, certificates, SSO, notifications, etc.
+  domain: argocd.127-0-0-2.nip.io
+
+ingress:
+  enabled: true

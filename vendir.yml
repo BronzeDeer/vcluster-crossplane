@@ -53,6 +53,28 @@ directories:
       repository:
         url: https://charts.crossplane.io/stable
 
+-
+  path: deps/vcluster/vendor
+
+  # set the permissions for this directory (optional; v0.33.0+)
+  # by default directories will be created with 0700
+  # can be provided as octal, in which case it needs to be prefixed with a `0`
+  permissions: 0700
+
+  contents:
+  - # path lives relative to directory path # (required)
+    path: chart
+
+    # skip fetching if the config for this path has not changed since the last sync
+    # optional, `false` by default, available since v0.36.0
+    # use `vendir sync --lazy=false` to forcefully sync when needed
+    lazy: true
+
+    helmChart:
+      name: vcluster
+      version: "0.32.1"
+      repository:
+        url: https://charts.loft.sh
 
 - # path is relative to `vendir` CLI working directory
   path: deps/jsonnet-libs

@@ -121,8 +121,9 @@ local tla = app.spec.sources.directory.jsonnet.tlas;
       )
     ,
     helmGitApp(name,relChartPath,valueFiles = ["../values.yaml"]):
-      self.baseArgs(name)
-      + $.appArgs.withHelmGit(relChartPath, valueFiles)
-
+      $.helmGitApp(
+        self.baseArgs(name)
+        + $.appArgs.withHelmGit(relChartPath, valueFiles)
+      )
   }
 }

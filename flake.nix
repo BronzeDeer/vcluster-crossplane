@@ -30,7 +30,7 @@
         ];
 
       shellHook = ''
-        vendir sync
+        vendir sync > /dev/null
       '';
 
       };
